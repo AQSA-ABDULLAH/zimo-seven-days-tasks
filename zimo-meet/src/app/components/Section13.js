@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 
-export default function Section13({ countries, roles }) {
+export default function Section13({ countries, roles, onApplyClick }) {
     const [showCountry, setShowCountry] = useState(true);
 
     return (
@@ -46,14 +46,16 @@ export default function Section13({ countries, roles }) {
                                         </option>
                                     ))}
                                 </select>
-                                 {/* Apply Button */}
-                                 <button 
+                                
+                                {/* Apply Button */}
+                                <button 
                                     type="button" 
                                     className="h-[120px] w-[120px] bg-black text-white tracking-widest text-[14px] absolute bottom-[100px] right-[-60px] rounded-3xl flex items-center text-center justify-center"
+                                    onClick={onApplyClick} // Trigger function to show Application component
                                 >
-                                    Apply
+                                    APPLY
                                 </button>
-                                </div>
+                            </div>
                         )}
                     </form>
                 </div>

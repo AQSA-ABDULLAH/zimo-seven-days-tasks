@@ -1,3 +1,6 @@
+"use client";
+import { useState } from "react";
+import Application from "./components/ApplicationForm/Application";
 import Header from "./components/Header";
 import Section1 from "./components/Section1";
 import Section10 from "./components/Section10";
@@ -27,24 +30,38 @@ const roles = [
 ];
 
 export default function Home() {
+  const [showApplication, setShowApplication] = useState(false);
+
+  // Function to show the Application section
+  const handleApplyClick = () => {
+    setShowApplication(true);
+  };
+
   return (
     <div>
-      <Header />
-      <Section1 />
-      <Section2 />
-      <Section3 />
-      <Section4 />
-      <Section5 />
-      <Section6 />
-      <Section7 />
-      <Section8 />
-      <Section9 />
-      <Section10 />
-      <Section11 />
-      <Section12 />
-      <Section13 countries={countries} roles={roles} />
-      <Section14 />
+      {!showApplication ? (
+        <>
+          <Header />
+          <Section1 />
+          <Section2 />
+          <Section3 />
+          <Section4 />
+          <Section5 />
+          <Section6 />
+          <Section7 />
+          <Section8 />
+          <Section9 />
+          <Section10 />
+          <Section11 />
+          <Section12 />
+          <Section13 countries={countries} roles={roles} onApplyClick={handleApplyClick} />
+          <Section14 />
+        </>
+      ) : (
+        <Application />
+      )}
     </div>
   );
 }
+
 
