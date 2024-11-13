@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function Section12() {
     return (
         <section className="flex flex-col items-center justify-center min-h-screen bg-black text-center text-white px-8">

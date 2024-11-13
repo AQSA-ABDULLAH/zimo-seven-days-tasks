@@ -1,5 +1,3 @@
-import React from 'react'
-
 export default function Section8() {
     return (
         <section id="zdoc" className="section container mx-auto min-h-screen flex flex-col justify-between py-16">

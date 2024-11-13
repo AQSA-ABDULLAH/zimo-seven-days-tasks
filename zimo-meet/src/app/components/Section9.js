@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function Section9() {
     return (
         <div className="min-h-screen flex flex-col justify-center xl:text-center items-center relative px-8 bg-black text-white overflow-hidden">
