@@ -1,5 +1,6 @@
 import Form1 from "./Form1";
 import Form2 from "./Form2";
+import Form3 from "./Form3";
 
 export default function Application() {
     return (
@@ -26,6 +27,7 @@ export default function Application() {
 
             <Form1 />
             <Form2 />
+            <Form3 />
 
             <footer className="flex justify-between items-end px-8  sm:py-16 md:py-16 md:pt-20 pb-8 mt-4 pr-[55px] 2xl:pr-8">
                 <div className="flex-1">
