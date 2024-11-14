@@ -1,9 +1,20 @@
+import React, { useState } from "react";
 import Form1 from "./Form1";
 import Form2 from "./Form2";
 import Form3 from "./Form3";
-import SupportStatement from "./SupportStatment";
+import Statement from "./Statment";
 
 export default function Application() {
+    const [currentForm, setCurrentForm] = useState(1);
+
+    const handleContinue = () => {
+        setCurrentForm((prevForm) => prevForm + 1);
+    };
+
+    const handleCancel = () => {
+        setCurrentForm(3); // Go back to Form3
+    };
+
     return (
         <section>
             <header className="uppercase px-8 lg:px-2 grid grid-cols-3 lg:grid-cols-2 my-8 lg:my-8 mb-16 tracking-widest text-[20px] lg:text-[16px]">
@@ -12,11 +23,11 @@ export default function Application() {
                     <button className="flex flex-1 mt-2 sm:absolute left-0 sm:px-2 cursor-pointer items-center gap-2 
                         uppercase tracking-widest text-[20px] lg:text-[16px]">
                         <img src="/assets/keyback.png" alt="keyback" className="w-[18px]" />
-                        <span>BacK</span>
+                        <span>Back</span>
                     </button>
                 </div>
 
-                <section className="flex flex-col text-center items-center lg:items-end sm:text-[14px] md:text-[14px] sm:text-end  md:text-end ">
+                <section className="flex flex-col text-center items-center lg:items-end sm:text-[14px] md:text-[14px] sm:text-end md:text-end ">
                     <h1>YOUR APPLICATION</h1>
                     <div className="flex items-center justify-end gap-x-2 mt-7">
                         <div className="bg-[#BE9f56] h-[2px] w-[60px] lg:w-[20px]"></div>
@@ -26,12 +37,13 @@ export default function Application() {
                 </section>
             </header>
 
-            <Form1 />
-            <Form2 />
-            <Form3 />
-            <SupportStatement />
+            {/* Conditional rendering based on current form state */}
+            {currentForm === 1 && <Form1 onContinue={handleContinue} />}
+            {currentForm === 2 && <Form2 onContinue={handleContinue} />}
+            {currentForm === 3 && <Form3 onContinue={handleContinue} />}
+            {currentForm === 4 && <Statement onCancel={handleCancel} />}
 
-            <footer className="flex justify-between items-end px-8  sm:py-16 md:py-16 md:pt-20 pb-8 mt-4 pr-[55px] 2xl:pr-8">
+            <footer className="flex justify-between items-end px-8 sm:py-16 md:py-16 md:pt-20 pb-8 mt-4 pr-[55px] 2xl:pr-8">
                 <div className="flex-1">
                     <img src="/assets/zimo-team-black.png" alt="zimo-team-logo" className="w-[318px] 3xl:w-[300px]" />
                 </div>
@@ -41,5 +53,11 @@ export default function Application() {
                 </div>
             </footer>
         </section>
-    )
+    );
 }
+
+
+
+
+
+

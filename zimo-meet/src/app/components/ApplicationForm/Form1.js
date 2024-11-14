@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default function Form1() {
+export default function Form1({ onContinue }) {
     const [formData, setFormData] = useState({
         email: '',
         confirmEmail: '',
@@ -185,8 +185,10 @@ export default function Form1() {
                     </div>
 
                     <button
-                      className=' h-[120px] w-[120px] bg-black text-white tracking-widest text-[14px]  bottom-0 right-[-200px] rounded-lg flex items-center text-center justify-center uppercase'
-                        >
+                        type="button"
+                        className='h-[120px] w-[120px] bg-black text-white tracking-widest text-[14px] rounded-lg flex items-center text-center justify-center uppercase'
+                        onClick={onContinue}
+                    >
                         CONTINUE
                     </button>
                 </form>
