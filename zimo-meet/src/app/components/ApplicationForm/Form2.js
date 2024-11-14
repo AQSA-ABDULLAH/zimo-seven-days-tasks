@@ -90,13 +90,14 @@ export default function Form2({ onContinue }) {
                 className="w-[90%] max-w-[580px] text-center bg-transparent border border-gray-500/50 rounded-xl p-3 focus:border-[#BE9F56] outline-none"
               />
               <ErrorMessage name="zipcode" component="div" className="text-red-500 text-sm" />
-
+              <div className="flex justify-around w-full pt-10">
               <button
                 type="submit"
                 className="lg:flex items-center justify-center hidden h-[120px] w-[120px] bg-black text-white tracking-widest text-[14px] rounded-lg text-center uppercase"
               >
                 CONTINUE
               </button>
+              </div>
             </Form>
           )}
         </Formik>

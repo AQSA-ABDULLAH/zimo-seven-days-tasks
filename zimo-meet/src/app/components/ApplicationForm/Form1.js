@@ -113,21 +113,12 @@ export default function Form1({ onContinue }) {
               />
               <ErrorMessage name="zarCode" component="div" className="text-red-500 text-sm" />
 
-              <div className="flex justify-around w-full">
+              <div className="flex justify-around w-full pt-10">
                 <button
                   type="submit"
                   className="lg:flex items-center justify-center hidden h-[120px] w-[120px] bg-black text-white tracking-widest text-[14px] rounded-lg text-center disabled:animate-pulse"
                 >
                   CONTINUE
-                </button>
-
-                <button
-                  type="button"
-                  className="lg:flex h-[120px] w-[120px] bg-black hidden text-white tracking-widest text-[14px] rounded-xl items-center text-center flex-col uppercase"
-                  onClick={onContinue}
-                >
-                  <span className="text-[10px] opacity-70 my-2">optional</span>
-                  <p className="text-[14px]">ADD Supporting Statement</p>
                 </button>
               </div>
             </Form>

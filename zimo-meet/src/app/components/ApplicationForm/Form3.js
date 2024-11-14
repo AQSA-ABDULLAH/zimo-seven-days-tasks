@@ -116,7 +116,7 @@ export default function Form3({ onContinue }) {
               <ErrorMessage name="employement" component="div" className="text-red-500 text-sm" />
 
               {/* File upload field */}
-              <div className="space-y-1 w-[90%] max-w-[580px] relative">
+              <div className="space-y-1 pt-2 max-w-[580px] ">
                 <label
                   htmlFor="resume"
                   className="text-black font-normal text-[18px] md:text-[14px] tracking-[2px] w-full text-center uppercase bg-transparent border placeholder:text-center border-gray-500/50 rounded-xl p-3 focus:border-[#BE9F56] outline-none cursor-pointer"
@@ -134,14 +134,7 @@ export default function Form3({ onContinue }) {
                 <ErrorMessage name="resume" component="div" className="text-red-500 text-sm" />
               </div>
 
-              <button
-                type="submit"
-                className="lg:hidden h-[120px] w-[120px] bg-black text-white tracking-widest text-[14px] absolute bottom-0 right-[-200px] rounded-xl flex items-center text-center justify-center disabled:animate-pulse"
-              >
-                SUBMIT
-              </button>
-
-              <div className="flex justify-around w-full">
+              <div className="flex gap-80 w-[450] pt-10">
                 <button
                   type="submit"
                   className="lg:flex items-center justify-center hidden h-[120px] w-[120px] bg-black text-white tracking-widest text-[14px] rounded-lg text-center disabled:animate-pulse"
