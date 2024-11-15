@@ -1,4 +1,6 @@
+// firebase/config.js
 import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";  // Import getAuth for authentication
 import { getAnalytics } from "firebase/analytics";
 
 const firebaseConfig = {
@@ -14,11 +16,15 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
+// Initialize and export Firebase Authentication
+const auth = getAuth(app);
+
 let analytics;
 if (typeof window !== "undefined") {
     analytics = getAnalytics(app);
 }
 
-export { app, analytics };
+export { app, auth, analytics };
+
 
 
