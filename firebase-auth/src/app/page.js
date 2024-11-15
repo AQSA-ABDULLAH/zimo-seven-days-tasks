@@ -5,7 +5,7 @@ import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { app } from "./firebase/config";
-import Dashboard from "./dashboard/page"; // Ensure this path is correct
+import Dashboard from "./dashboard/page";
 
 const Home = () => {
     const [user, setUser] = useState(null);
