@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { doc, getDoc, setDoc } from "firebase/firestore";
 import { app, firestore } from "../firebase/config";
 import AddPhoto from "../upload-photo/page"; // Import AddPhoto component
+import ViewPhoto from "../your-photo/page";
 
 const Dashboard = () => {
     const [loading, setLoading] = useState(true);
@@ -63,12 +64,11 @@ const Dashboard = () => {
 
     return (
         <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
-            <div className="p-8 rounded-lg shadow-md bg-white w-3/4 max-w-lg">
+            <div className="p-8 rounded-lg shadow-md bg-white w-80% max-w-lg">
                 <h1 className="text-3xl font-bold mb-4">
                     Welcome to the Dashboard, {user ? user.email : "Guest"}
                 </h1>
                 <div className="flex flex-col mt-6 space-y-4">
-                    <h1 className="text-lg font-medium">Your Images</h1>
                     <div className="flex flex-row justify-between items-center space-x-4">
                         <button
                             onClick={openModal} // Open the modal when clicked
@@ -84,8 +84,10 @@ const Dashboard = () => {
                         </button>
                     </div>
                 </div>
+
+                <ViewPhoto />
             </div>
-            
+
             {/* Show modal when isModalOpen is true */}
             {isModalOpen && <AddPhoto onClose={closeModal} />}
         </div>
@@ -93,5 +95,7 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+
+
 
 
